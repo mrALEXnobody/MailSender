@@ -18,8 +18,8 @@ namespace MailSender.WPFTest
 
         private void SendButton_OnClick(object sender, RoutedEventArgs e)
         {
-            var host = "smtp.mail.ru";
-            var port = 25;
+            var host = Server.host;
+            var port = Server.port;
 
             var userName = UserNameEditor.Text;
             var password = PasswordEditor.SecurePassword;
