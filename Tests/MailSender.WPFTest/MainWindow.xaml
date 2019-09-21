@@ -7,11 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="Имя пользователя" HorizontalAlignment="Left" Margin="111,119,0,0" VerticalAlignment="Top"/>
-        <Label Content="Пароль" HorizontalAlignment="Left" Margin="468,119,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="UserNameEditor" HorizontalAlignment="Left" Height="23" Margin="111,150,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="PasswordEditor" HorizontalAlignment="Left" Margin="376,150,0,0" VerticalAlignment="Top" Width="227"/>
-        <Button Content="Отправить" HorizontalAlignment="Left" Margin="239,271,0,0" VerticalAlignment="Top" Width="212" Height="53" Click="SendButton_OnClick" />
+        <Label Content="Имя пользователя" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="UserNameEditor" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="273"/>
+        <PasswordBox x:Name="PasswordEditor" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top" Width="273"/>
+        <Button Content="Отправить" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" Width="273" Height="53" Click="SendButton_OnClick" />
 
+        <TextBox Name="MailHeader" FontSize="16" Margin="339,37,10,345" Text="Заголовок письма"/>
+
+        <TextBox Name="MailBody" Margin="339,96,10,10" Text="Текст письма"/>
     </Grid>
 </Window>

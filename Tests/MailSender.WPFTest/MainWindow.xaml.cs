@@ -24,7 +24,7 @@ namespace MailSender.WPFTest
             var userName = UserNameEditor.Text;
             var password = PasswordEditor.SecurePassword;
 
-            var msg = "Hello World!!! " + DateTime.Now.ToString();
+            var msg = MailBody.Text + " " + DateTime.Now.ToString();
 
             using (var client=new SmtpClient(host, port)) 
             {
@@ -35,7 +35,7 @@ namespace MailSender.WPFTest
                 {
                     message.From = new MailAddress("scorp_predateur@mail.ru", "Александр");
                     message.To.Add(new MailAddress("fun_account@mail.ru", "ALEX"));
-                    message.Subject = "Заголовок письма от " + DateTime.Now.ToString();
+                    message.Subject = MailHeader.Text + " " + DateTime.Now.ToString();
                     message.Body = msg;
                     //message.Attachments.Add(new Attachment());
 
@@ -49,10 +49,8 @@ namespace MailSender.WPFTest
                     {
                         MessageBox.Show(error.Message, "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
-                    //1,32,00
                 }
             } 
-
         }
     }
 }
