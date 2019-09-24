@@ -30,7 +30,7 @@
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem DockPanel.Dock="Right">
-                <TextBlock>Готов к труду и оборое!</TextBlock>
+                <TextBlock>Готов к труду и обороне!</TextBlock>
             </StatusBarItem>
             <StatusBarItem>
                 <ctrl:TabItemsSwitcher Width="120" 
@@ -141,8 +141,6 @@
                             <!--<Separator></Separator>-->
                             <ComboBox MinWidth="75" MaxWidth="150" ItemsSource="{x:Static data:TestData.Senders}" 
                                       DisplayMemberPath="Name" SelectedIndex="0" />
-
-
                             <Button ToolTip="Создать">
                                 <Image Source="Media/Add.png" Height="18"/>
                             </Button>
@@ -199,12 +197,11 @@
                         </ToolBar>
                     </ToolBarTray>
                     <DataGrid Grid.Row="1" AutoGenerateColumns="False" 
+                              ItemsSource="{Binding Recipient, Source={StaticResource DataBase}}"
                               GridLinesVisibility="Vertical" 
                               AlternatingRowBackground="LightGray" 
                               IsReadOnly="True"
                               HeadersVisibility="Column">
-                        <!--ItemsSource="{Binding Recipient, Source={StaticResource DataBase}}"-->
-                        <!--1.40.07-->
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="Имя" Binding="{Binding Name}"/>
