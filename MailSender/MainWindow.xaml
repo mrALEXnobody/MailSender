@@ -115,11 +115,5 @@
             <TabItem Header="Планировщик"></TabItem>
             <TabItem Header="Письма"></TabItem>
         </TabControl>
-        
-        
     </DockPanel>
-    
-    
-    
-    
 </Window>
