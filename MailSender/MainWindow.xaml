@@ -7,6 +7,7 @@
         xmlns:local="clr-namespace:MailSender"
         xmlns:data="clr-namespace:MailSender.lib.Data;assembly=MailSender.lib"
         xmlns:entityes="clr-namespace:MailSender.lib.Entityes;assembly=MailSender.lib"
+        xmlns:db="clr-namespace:MailSender.lib.Data.Linq2SQL;assembly=MailSender.lib"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
@@ -121,6 +122,9 @@
             </TabItem>-->
             <TabItem Header="Рассылка">
                 <Grid>
+                    <Grid.Resources>
+                        <db:MailSenderDBDataContext x:Key="DataBase"/>
+                    </Grid.Resources>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition/>
@@ -188,11 +192,17 @@
                             </Button>
                         </ToolBar>
                     </ToolBarTray>
-                    <DataGrid Grid.Row="1" AutoGenerateColumns="False">
+                    <DataGrid Grid.Row="1" AutoGenerateColumns="False" 
+                              GridLinesVisibility="Vertical" 
+                              AlternatingRowBackground="LightGray" 
+                              IsReadOnly="True"
+                              HeadersVisibility="Column">
+                        <!--ItemsSource="{Binding Recipient, Source={StaticResource DataBase}}"-->
+                        <!--1.40.07-->
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="ID"/>
-                            <DataGridTextColumn Header="Имя"/>
-                            <DataGridTextColumn Header="Адрес" Width="*"/>
+                            <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Header="Имя" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="Адрес" Width="*" Binding="{Binding Address}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
