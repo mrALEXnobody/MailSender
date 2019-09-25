@@ -49,8 +49,10 @@ namespace MailSender.WPFTest
                     {
                         MessageBox.Show(error.Message, "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
+                    //1,32,00
                 }
             }
+
         }
     }
 }
