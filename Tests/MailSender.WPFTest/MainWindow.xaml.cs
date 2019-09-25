@@ -26,12 +26,12 @@ namespace MailSender.WPFTest
 
             var msg = MailBody.Text + " " + DateTime.Now.ToString();
 
-            using (var client=new SmtpClient(host, port)) 
+            using (var client = new SmtpClient(host, port))
             {
                 client.EnableSsl = true;
                 client.Credentials = new NetworkCredential(userName, password);
 
-                using (var message=new MailMessage())
+                using (var message = new MailMessage())
                 {
                     message.From = new MailAddress("scorp_predateur@mail.ru", "Александр");
                     message.To.Add(new MailAddress("fun_account@mail.ru", "ALEX"));
@@ -52,7 +52,6 @@ namespace MailSender.WPFTest
                         //MessageBox.Show(error.Message, "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
-            } 
         }
     }
 }
