@@ -1,0 +1,48 @@
+﻿<Window x:Class="MailSender.WPFTest1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MailSender.WPFTest1"
+        mc:Ignorable="d"
+         Title="{Binding Text, ElementName=TextEditor}" 
+        Height="400" Width="600">
+    <Grid>
+        <TextBox Name="TextEditor" 
+                 Text="13"
+                 HorizontalAlignment="Left" Height="23" Margin="24,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136"/>
+        <TextBlock Name="TextViewer" 
+                   Text="{Binding ElementName=TextEditor, Path=Text}"
+                   HorizontalAlignment="Left" Margin="24,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="136"/>
+        <ProgressBar Value="{Binding Text, ElementName=TextEditor}" 
+                     Minimum="0" Maximum="100"
+                     HorizontalAlignment="Left" Height="18" Margin="24,100,0,0" VerticalAlignment="Top" Width="136"/>
+        <Slider Value="{Binding Text, ElementName=TextEditor}"  
+                Minimum="0" Maximum="100" SmallChange="10"
+                HorizontalAlignment="Left" Margin="24,142,0,0" VerticalAlignment="Top" Height="20" Width="136"/>
+        <TextBox 
+            Text="{Binding Text, ElementName=TextEditor, UpdateSourceTrigger=PropertyChanged}"
+            HorizontalAlignment="Left" Height="23" Margin="179,58,-23,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136"/>
+        <Canvas 
+            HorizontalAlignment="Left" Height="100" Margin="179,126,0,0" 
+            VerticalAlignment="Top" Width="203"/>
+        <Canvas Margin="192,118,10,11">
+            <Ellipse Width="150" Height="50" Fill="Blue" Stroke="Red"
+                     StrokeThickness="3" 
+                     Canvas.Left="{Binding Value, ElementName=LeftValueSlider}" 
+                     Canvas.Top="{Binding Value, ElementName=TopValueSlider}"
+                     RenderTransformOrigin="0.5,0.5" >
+                <Ellipse.RenderTransform>
+                    <RotateTransform Angle="{Binding Text, ElementName=TextViewer}"/>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+
+        </Canvas>
+        <Slider Name="TopValueSlider"
+            HorizontalAlignment="Left" Margin="157,118,0,0" VerticalAlignment="Top" Orientation="Vertical" Maximum="141" Height="141"/>
+        <Slider Name="LeftValueSlider"
+            HorizontalAlignment="Left" Margin="192,99,0,0" VerticalAlignment="Top" Width="190" Maximum="190"/>
+
+
+    </Grid>
+</Window>
