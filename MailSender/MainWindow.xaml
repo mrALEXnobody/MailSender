@@ -137,8 +137,8 @@
                     </Grid.RowDefinitions>
                     <ToolBarTray Grid.Row="0">
                         <ToolBar>
-                            <Label MinWidth="85">Отправители</Label>
-                            <!--<Separator></Separator>-->
+                            <!--<Label MinWidth="85">Отправители</Label>
+                            --><!--<Separator></Separator>--><!--
                             <ComboBox MinWidth="75" MaxWidth="150" ItemsSource="{x:Static data:TestData.Senders}" 
                                       DisplayMemberPath="Name" SelectedIndex="0" />
                             <Button ToolTip="Создать">
@@ -149,11 +149,14 @@
                             </Button>
                             <Button ToolTip="Удалить">
                                 <Image Source="Media/Remove.png" Height="18"/>
-                            </Button>
+                            </Button>-->
+                            <ctrl:ListController PanelName="Отправители" 
+                                                 Items="{x:Static data:TestData.Senders}"
+                                                 ViewPropertyPath="Name"/>
                         </ToolBar>
                         <ToolBar Band="1" >
-                            <Label MinWidth="85">Сервера</Label>
-                            <!--<Separator></Separator>-->
+                            <!--<Label MinWidth="85">Сервера</Label>
+                            --><!--<Separator></Separator>--><!--
                             <ComboBox MinWidth="75" MaxWidth="150" ItemsSource="{x:Static data:TestData.Servers}"
                                       SelectedIndex="0">
                                 <ComboBox.ItemTemplate>
@@ -162,7 +165,7 @@
                                             <TextBlock Text="{Binding Name}"/>
                                             <TextBlock Text="{Binding Address}" Margin="3,0,0,0" Opacity="0.6"
                                                        ToolTip="{Binding Port, StringFormat=Port:{0}}"/>
-                                            <!--<TextBlock Text="{Binding Port, StringFormat=:{0}}" Opacity="0.6"/>-->
+                                            --><!--<TextBlock Text="{Binding Port, StringFormat=:{0}}" Opacity="0.6"/>--><!--
                                         </StackPanel>
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
@@ -175,7 +178,20 @@
                             </Button>
                             <Button ToolTip="Удалить">
                                 <fa:ImageAwesome Height="18" Icon="Times" Foreground="Red"/>
-                            </Button>
+                            </Button>-->
+                            <ctrl:ListController PanelName="Сервера" 
+                                                 Items="{x:Static data:TestData.Servers}">
+                                <ctrl:ListController.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type entityes:Server}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Name}"/>
+                                            <TextBlock Text="{Binding Address}" Margin="3,0,0,0" Opacity="0.6"
+                                                       ToolTip="{Binding Port, StringFormat=Port:{0}}"/>
+                                            
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ctrl:ListController.ItemTemplate>
+                            </ctrl:ListController>
                         </ToolBar>
                         <ToolBar>
                             <Label MinWidth="85">Перейти в планировщик</Label>
@@ -197,11 +213,12 @@
                         </ToolBar>
                     </ToolBarTray>
                     <DataGrid Grid.Row="1" AutoGenerateColumns="False" 
-                              ItemsSource="{Binding Recipient, Source={StaticResource DataBase}}"
+                              
                               GridLinesVisibility="Vertical" 
                               AlternatingRowBackground="LightGray" 
                               IsReadOnly="True"
                               HeadersVisibility="Column">
+                        <!--ItemsSource="{Binding Recipient, Source={StaticResource DataBase}}"-->
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="Имя" Binding="{Binding Name}"/>

@@ -7,6 +7,7 @@
              xmlns:fa="http://schemas.fontawesome.io/icons/"
              mc:Ignorable="d" 
              d:DesignHeight="22" d:DesignWidth="500">
+    <!--DataContext="{Binding RelativeSource={RelativeSource Self}}" - грабли -->
     <UserControl.Resources>
         <Style TargetType="{x:Type fa:ImageAwesome}">
             <Setter Property="Height" Value="16"/>
@@ -17,21 +18,33 @@
             <Setter Property="Padding" Value="5,0"/>
         </Style>
     </UserControl.Resources>
-    
-    <DockPanel>
-        <TextBlock Text="Панель" VerticalAlignment="Center" Margin="3,0"/>
+
+    <DockPanel DataContext="{Binding RelativeSource={RelativeSource AncestorType=local:ListController}}">
+        <TextBlock Text="{Binding PanelName, TargetNullValue=[панель], FallbackValue=[--]}" VerticalAlignment="Center" Margin="3,0"/>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
-            <Button ToolTip="Создать">
+            <Button ToolTip="Создать"
+                    Command="{Binding CreateCommand}"
+                    CommandParameter="{Binding SelectedItem}">
                 <fa:ImageAwesome Icon="Plus" Foreground="DarkBlue"/>
             </Button>
-            <Button ToolTip="Редактировать">
+            <Button ToolTip="Редактировать"
+                    Command="{Binding EditCommand}"
+                    CommandParameter="{Binding SelectedItem}">
                 <fa:ImageAwesome Icon="Edit" Foreground="DarkMagenta"/>
             </Button>
-            <Button ToolTip="Удалить">
+            <Button ToolTip="Удалить"
+                    Command="{Binding DeleteCommand}"
+                    CommandParameter="{Binding SelectedItem}">
                 <fa:ImageAwesome Icon="Times" Foreground="Red"/>
             </Button>
         </StackPanel>
-        <ComboBox/>
+        <!--<ComboBox ItemsSource="{Binding Items, RelativeSource={RelativeSource AncestorType={x:Type local:ListController}}}"/>-->
+        <ComboBox MinWidth="120" 
+                  ItemsSource="{Binding Items}" 
+                  SelectedItem="{Binding SelectedItem}"
+                  SelectedIndex="{Binding SelectedIndex}"
+                  SelectedValuePath="{Binding ValuePropertyPath}"
+                  DisplayMemberPath="{Binding ViewPropertyPath}"
+                  ItemTemplate="{Binding ItemTemplate}"/>
     </DockPanel>
 </UserControl>
-<!--35.40-->
