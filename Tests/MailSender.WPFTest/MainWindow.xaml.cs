@@ -47,12 +47,12 @@ namespace MailSender.WPFTest
                     }
                     catch (Exception error)
                     {
-                        MessageBox.Show(error.Message, "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                        WindowError we = new WindowError(error);
+                        we.ShowDialog();
+                        //MessageBox.Show(error.Message, "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
-                    //1,32,00
                 }
             }
-
         }
     }
 }
