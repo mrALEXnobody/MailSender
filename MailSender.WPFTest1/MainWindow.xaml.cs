@@ -23,6 +23,7 @@ namespace MailSender.WPFTest1
         public MainWindow()
         {
             InitializeComponent();
+            //DataContext = new MainWindowViewModel();
         }
     }
 }

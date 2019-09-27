@@ -64,7 +64,11 @@ namespace MailSender.Controls
         /// <summary>Выбранный элемент</summary>
         //[Category("")]
         [Description("Выбранный элемент")]
-        public object SelectedItem { get => (object)GetValue(SelectedItemProperty); set => SetValue(SelectedItemProperty, value); }
+        public object SelectedItem
+        {
+            get => (object)GetValue(SelectedItemProperty);
+            set => SetValue(SelectedItemProperty, value);
+        }
         #endregion
 
         #region PanelName : string - Название панели
@@ -80,7 +84,11 @@ namespace MailSender.Controls
         /// <summary>Название панели</summary>
         //[Category("")]
         [Description("Название панели")]
-        public string PanelName { get => (string)GetValue(PanelNameProperty); set => SetValue(PanelNameProperty, value); }
+        public string PanelName
+        {
+            get => (string)GetValue(PanelNameProperty);
+            set => SetValue(PanelNameProperty, value);
+        }
         #endregion
         //0.56.00
         #region SelectedItemIndex : int - Индекс выбранного элемента
@@ -96,7 +104,11 @@ namespace MailSender.Controls
         /// <summary> Индекс выбранного элемента</summary>
         //[Category("")]
         [Description("Индекс выбранного элемента")]
-        public int SelectedItemIndex { get => (int)GetValue(SelectedItemIndexProperty); set => SetValue(SelectedItemIndexProperty, value); }
+        public int SelectedItemIndex
+        {
+            get => (int)GetValue(SelectedItemIndexProperty);
+            set => SetValue(SelectedItemIndexProperty, value);
+        }
         #endregion
 
         #region ViewPropertyPath : string - Имя отображаемого свойства
@@ -112,7 +124,11 @@ namespace MailSender.Controls
         /// <summary>Имя отображаемого свойства</summary>
         //[Category("")]
         [Description("Имя отображаемого свойства")]
-        public string ViewPropertyPath { get => (string)GetValue(ViewPropertyPathProperty); set => SetValue(ViewPropertyPathProperty, value); }
+        public string ViewPropertyPath
+        {
+            get => (string)GetValue(ViewPropertyPathProperty);
+            set => SetValue(ViewPropertyPathProperty, value);
+        }
         #endregion
 
         #region ValuePropertyPath : string - Имя свойства значения
@@ -128,7 +144,11 @@ namespace MailSender.Controls
         /// <summary>Имя свойства значения</summary>
         //[Category("")]
         [Description("Имя свойства значения")]
-        public string ValuePropertyPath { get => (string)GetValue(ValuePropertyPathProperty); set => SetValue(ValuePropertyPathProperty, value); }
+        public string ValuePropertyPath
+        {
+            get => (string)GetValue(ValuePropertyPathProperty);
+            set => SetValue(ValuePropertyPathProperty, value);
+        }
         #endregion
 
         #region ItemTemplate : DataTemplate - Шаблон визуализации данных
@@ -144,7 +164,11 @@ namespace MailSender.Controls
         /// <summary>Шаблон визуализации данных</summary>
         //[Category("")]
         [Description("Шаблон визуализации данных")]
-        public DataTemplate ItemTemplate { get => (DataTemplate)GetValue(ItemTemplateProperty); set => SetValue(ItemTemplateProperty, value); }
+        public DataTemplate ItemTemplate
+        {
+            get => (DataTemplate)GetValue(ItemTemplateProperty);
+            set => SetValue(ItemTemplateProperty, value);
+        }
         #endregion
 
         #region Команды
@@ -161,7 +185,11 @@ namespace MailSender.Controls
         /// <summary>Команда создания нового значения</summary>
         //[Category("")]
         [Description("Команда создания нового значения")]
-        public ICommand CreateCommand { get => (ICommand)GetValue(CreateCommandProperty); set => SetValue(CreateCommandProperty, value); }
+        public ICommand CreateCommand
+            {
+                get => (ICommand)GetValue(CreateCommandProperty);
+                set => SetValue(CreateCommandProperty, value);
+            }   
         #endregion
         //0.58.57
         #region EditCommand : ICommand - Редактирование элемента
@@ -177,7 +205,11 @@ namespace MailSender.Controls
         /// <summary>Редактирование элемента</summary>
         //[Category("")]
         [Description("Редактирование элемента")]
-        public ICommand EditCommand { get => (ICommand)GetValue(EditCommandProperty); set => SetValue(EditCommandProperty, value); }
+        public ICommand EditCommand
+            {
+                get => (ICommand)GetValue(EditCommandProperty);
+                set => SetValue(EditCommandProperty, value);
+            }
         #endregion
 
         #region DeleteCommand : ICommand - Команда удаления элемента
@@ -193,7 +225,11 @@ namespace MailSender.Controls
         /// <summary>Команда удаления элемента</summary>
         //[Category("")]
         [Description("Команда удаления элемента")]
-        public ICommand DeleteCommand { get => (ICommand)GetValue(DeleteCommandProperty); set => SetValue(DeleteCommandProperty, value); }
+        public ICommand DeleteCommand
+            {
+                get => (ICommand)GetValue(DeleteCommandProperty);
+                set => SetValue(DeleteCommandProperty, value);
+            }
         #endregion
         #endregion
 

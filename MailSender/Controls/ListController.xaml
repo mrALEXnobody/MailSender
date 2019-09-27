@@ -23,8 +23,7 @@
         <TextBlock Text="{Binding PanelName, TargetNullValue=[панель], FallbackValue=[--]}" VerticalAlignment="Center" Margin="3,0"/>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
             <Button ToolTip="Создать"
-                    Command="{Binding CreateCommand}"
-                    CommandParameter="{Binding SelectedItem}">
+                    Command="{Binding CreateCommand}">
                 <fa:ImageAwesome Icon="Plus" Foreground="DarkBlue"/>
             </Button>
             <Button ToolTip="Редактировать"
