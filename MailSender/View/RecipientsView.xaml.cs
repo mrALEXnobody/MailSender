@@ -10,27 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MailSender.WPFTest
+namespace MailSender.View
 {
     /// <summary>
-    /// Логика взаимодействия для WindowError.xaml
+    /// Логика взаимодействия для RecipientsView.xaml
     /// </summary>
-    public partial class WindowError : Window
+    public partial class RecipientsView : UserControl
     {
-        public WindowError(Exception exeption)
+        public RecipientsView()
         {
             InitializeComponent();
-
-            this.Title = "Ошбка!";
-
-            ExceptionError.Content = exeption.ToString();
-        }
-
-        private void BtnOK_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }
