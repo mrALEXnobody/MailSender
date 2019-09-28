@@ -26,12 +26,6 @@ namespace MailSender
             InitializeComponent();
         }
 
-        private void ExitMenuItem_OnClick(object sender, RoutedEventArgs e)
-        {
-            Close();
-            
-        }
-
         private void TabItemsSwitcher_OnLeftButtonClick(object sender, EventArgs e)
         {
             if (!(sender is TabItemsSwitcher switcher)) return;

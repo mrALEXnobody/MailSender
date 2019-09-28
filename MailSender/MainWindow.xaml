@@ -10,6 +10,7 @@
         xmlns:db="clr-namespace:MailSender.lib.Data.Linq2SQL;assembly=MailSender.lib"
         xmlns:ctrl="clr-namespace:MailSender.Controls"
         xmlns:view="clr-namespace:MailSender.View"
+        xmlns:commands="clr-namespace:MailSender.Commands"
         mc:Ignorable="d"
         Title="{Binding WindowTitle}" Height="450" Width="800"
         DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}">
@@ -21,7 +22,11 @@
                 <MenuItem Header="Открыть"/>
                 <MenuItem Header="Сохранить"/>
                 <Separator/>
-                <MenuItem Header="Выход" Click="ExitMenuItem_OnClick"/>
+                <MenuItem Header="Выход">
+                    <MenuItem.Command>
+                        <commands:ApplicationCloseCommand/>
+                    </MenuItem.Command>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="Сервис">
                 <MenuItem Header="Параметры" IsEnabled="False"/>
