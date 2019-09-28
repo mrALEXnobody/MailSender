@@ -15,4 +15,8 @@
         <Button x:Name="btnOK" Content="OK" Margin="0,0,30,10" Height="30" RenderTransformOrigin="0.187,0.533" Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="BtnOK_Click" />
 
     </Grid>
+
 </Window>
+
+
+
