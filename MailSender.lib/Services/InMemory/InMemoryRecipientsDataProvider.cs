@@ -1,10 +1,7 @@
-﻿using MailSender.lib.Data.Linq2SQL;
+﻿using MailSender.lib.Entityes;
 using MailSender.lib.Services.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MailSender.lib.Services
 {
@@ -20,11 +17,24 @@ namespace MailSender.lib.Services
             return recipient.Id;
         }
 
+        public void Edit(int id, Recipient item)
+        {
+            var db_item = GetById(id);
+            if (db_item is null) return;
+            db_item.Name = item.Name;
+            db_item.Address = item.Address;
+        }
+
         public IEnumerable<Recipient> GetAll() => _Recipients;
 
-        public void SaveChanges()
+        public Recipient GetById(int id) => _Recipients.FirstOrDefault(r => r.Id == id);
+
+        public bool Remove(int id)
         {
-            
+            var db_item = GetById(id);
+            return _Recipients.Remove(db_item);
         }
+
+        public void SaveChanges() { }
     }
 }
