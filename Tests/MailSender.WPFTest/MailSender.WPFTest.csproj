@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Server.cs" />
     <Compile Include="WindowError.xaml.cs">
       <DependentUpon>WindowError.xaml</DependentUpon>
     </Compile>

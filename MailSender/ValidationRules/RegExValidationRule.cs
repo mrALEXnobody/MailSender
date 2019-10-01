@@ -36,6 +36,16 @@ namespace MailSender.ValidationRules
 
             //return new ValidationResult(false, "Сообщение об ошибке");
             //return ValidationResult.ValidResult;
+
+            //string null_str1 = null;
+            //string null_str2 = null;
+            //var s1 = "Hello world";
+
+            //var s = null_str1 ?? null_str2 ?? s1;
+            //var s = null_str1;
+            //if (s == null) s = null_str2;
+            //if (s == null) s = s1;
+
         }
     }
 }
