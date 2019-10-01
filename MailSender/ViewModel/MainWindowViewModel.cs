@@ -10,7 +10,7 @@ namespace MailSender.ViewModel
     public class MainWindowViewModel : ViewModelBase
     {
         private IRecipientsDataProvider _RecipientsProvider;
-
+        //1.11.00
         private string windowTitle = "Рассыльщик почты v0.1";
 
         public string WindowTitle
