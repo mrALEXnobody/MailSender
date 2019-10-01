@@ -7,10 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="365" d:DesignWidth="270"
              DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}">
-    <Grid>
+    <Grid Margin="3" Validation.Error="OnDataValidationError">
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="5,2"/>
+            </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -24,14 +27,15 @@
         <TextBlock Grid.Column="0" Grid.Row="0" Text="ID"/>
         <TextBlock Grid.Column="0" Grid.Row="1" Text="Имя"/>
         <TextBlock Grid.Column="0" Grid.Row="2" Text="Email"/>
-        <TextBlock Grid.Column="0" Grid.Row="3" Text="Описание"/>
 
-        <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding SelectedRecipient.Id}"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding SelectedRecipient.Name}"/>
+        <TextBox Grid.Column="1" Grid.Row="0" 
+                 Text="{Binding SelectedRecipient.Id, NotifyOnValidationError=True}"/>
+        <TextBox Grid.Column="1" Grid.Row="1" 
+                 Text="{Binding SelectedRecipient.Name, NotifyOnValidationError=True, 
+            ValidatesOnDataErrors=True, ValidatesOnExceptions=True}"/>
         <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding SelectedRecipient.Address}"/>
-        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding SelectedRecipient.Description}"/>
 
-        <UniformGrid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4"
+        <UniformGrid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3"
                      VerticalAlignment="Top" HorizontalAlignment="Center"
                      Rows="1" Margin="0,7,0,0">
             <Button Padding ="15,7" Margin="5">Создать</Button>
