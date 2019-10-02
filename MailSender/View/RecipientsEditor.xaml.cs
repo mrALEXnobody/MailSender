@@ -25,15 +25,15 @@ namespace MailSender.View
             InitializeComponent();
         }
 
-        private void OnDataValidationError(object sender, ValidationErrorEventArgs e)
-        {
-            if (!(e.Source is Control control)) return;
+        //private void OnDataValidationError(object sender, ValidationErrorEventArgs e)
+        //{
+        //    if (!(e.Source is Control control)) return;
 
-            if (e.Action == ValidationErrorEventAction.Added)
-                control.ToolTip = e.Error.ErrorContent.ToString();
-            else
-                control.ClearValue(ToolTipProperty);
-            //1.30.00
-        }
+        //    if (e.Action == ValidationErrorEventAction.Added)
+        //        control.ToolTip = e.Error.ErrorContent.ToString();
+        //    else
+        //        control.ClearValue(ToolTipProperty);
+        //    //1.30.00
+        //}
     }
 }
