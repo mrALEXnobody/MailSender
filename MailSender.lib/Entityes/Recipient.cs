@@ -18,7 +18,7 @@ namespace MailSender.lib.Entityes
             }
         }
 
-        string IDataErrorInfo.Error => string.Empty;
+        string IDataErrorInfo.Error => "";
 
         string IDataErrorInfo.this[string PropertyName]
         {
