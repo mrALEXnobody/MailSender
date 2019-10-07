@@ -51,7 +51,11 @@ namespace MailSender.ViewModel
             RefreshDataCommand = new RelayCommand(OnRefreshDataCommandExecute, CanRefreshDataCommandExecute);
             SaveChangesCommand = new RelayCommand(OnSaveChangesCommandExecute);
 
-            //RefreshData();
+            if (IsInDesignMode)
+            {
+                Recipients.Add(new Recipient { Id = 1, Name = "Recipient 1", Address = "recipient1@server.com" });
+                Recipients.Add(new Recipient { Id = 2, Name = "Recipient 2", Address = "recipient2@server.com" });
+            }
         }
 
         private void OnSaveChangesCommandExecute()

@@ -205,6 +205,7 @@
                             <Button ToolTip="Перейти">
                                 <fa:ImageAwesome Height="18" Icon="ClockOutline" Foreground="DarkBlue"/>
                             </Button>
+                            <!--<TextBlock Text="{Binding Recipients[0].Address}"/>-->
                         </ToolBar>
                         <ToolBar Band="1">
                             <Label MinWidth="85">Получатели</Label>
