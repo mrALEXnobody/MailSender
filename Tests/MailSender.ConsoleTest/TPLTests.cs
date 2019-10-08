@@ -102,9 +102,9 @@ namespace MailSender.ConsoleTest
 
         private static void ParallelInvokeMethod()
         {
-            Console.WriteLine("{0} - started", Thread.CurrentThread.ManagedThreadId);
+            Console.WriteLine("Th.Id:{0} - started", Thread.CurrentThread.ManagedThreadId);
             Thread.Sleep(250);
-            Console.WriteLine("{0} - ended", Thread.CurrentThread.ManagedThreadId);
+            Console.WriteLine("Th.Id:{0} - ended", Thread.CurrentThread.ManagedThreadId);
         }
 
         private static int MessageProcessor(string msg)

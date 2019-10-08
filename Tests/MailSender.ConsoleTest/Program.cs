@@ -26,9 +26,14 @@ namespace MailSender.ConsoleTest
 
             #endregion
 
+            //TaskTests.Start();
 
+            //AsyncAwaitTests.Start();
+            AsyncAwaitTests.StartAsync();
 
+            Console.WriteLine("Главный поток завершён!");
             Console.ReadLine();
+            Console.WriteLine("Программа завершена...");
         }
 
         
