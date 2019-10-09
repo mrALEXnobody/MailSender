@@ -34,7 +34,7 @@ namespace MailSender.ConsoleTest
             var printer_thread = new Thread(Printer);
             printer_thread.IsBackground = true;
             printer_thread.Name = "Поток принтера";
-            //printer_thread.Start(message);
+            printer_thread.Start(message);
 
             var printer2_thread = new Thread(() => Printer(message));
             printer2_thread.Name = "Поток принтера 2";

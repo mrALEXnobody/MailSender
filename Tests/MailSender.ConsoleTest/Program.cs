@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MailSender.ConsoleTest
 {
@@ -6,13 +10,32 @@ namespace MailSender.ConsoleTest
     {
         static void Main(string[] args)
         {
-            //ThreadTests.Start();
+            #region Потоки
+
+            // ThreadTests.Start();
 
             //SynchronizationTests.Start();
 
-            ThreadPoolTests.Start();
+            //ThreadPoolTests.Start();
 
+            #endregion
+
+            #region TPL
+
+            //TPLTests.Start();
+
+            #endregion
+
+            //TaskTests.Start();
+
+            //AsyncAwaitTests.Start();
+            AsyncAwaitTests.StartAsync();
+
+            Console.WriteLine("Главный поток завершён!");
             Console.ReadLine();
+            Console.WriteLine("Программа завершена...");
         }
+
+        
     }
 }
